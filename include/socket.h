@@ -2,6 +2,7 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include "socketexception.h"
+#include "http.h"
 
 class ServerSocket;
 
@@ -17,4 +18,5 @@ public:
 
     //for sending and recieving messages, the function calls should be abstracted using operator overload (<< and >>)
     Socket& operator <<(void *c);
+    void operator >>(HttpRequest *h);
 };
